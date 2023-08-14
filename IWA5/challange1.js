@@ -21,8 +21,10 @@ if (customerLocation === "RSA") {
   shipping = 400;
 } else if (customerLocation === "NAM") {
   shipping = 600;
+  currency = "$";
 } else {
   shipping = 800;
+  currency = "$";
 }
 
 const totalCost = totalItemCost + shipping;
