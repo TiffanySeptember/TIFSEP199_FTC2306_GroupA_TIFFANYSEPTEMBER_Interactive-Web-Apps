@@ -19,7 +19,7 @@ if (
   const balance = startingAfterTax - transport - food - rent;
   console.log("R" + balance.toFixed(2));
 } else {
-  ("Balance should not be calculated at midnight");
+  console.log("Balance should not be calculated at midnight");
 }
 
 // Only change above this line
