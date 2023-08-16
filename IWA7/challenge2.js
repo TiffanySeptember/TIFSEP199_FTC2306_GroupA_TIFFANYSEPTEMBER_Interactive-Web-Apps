@@ -1,10 +1,10 @@
 const nickname = "Timmy";
-const firstname = "Timothy";
+const firstName = "Timothy";
 
 if (nickname) {
   console.log(`Good Morning, ${nickname}!`);
-} else if (firstname) {
-  console.log(`Good Morning, ${firstname}!`);
+} else if (firstName) {
+  console.log(`Good Morning, ${firstName}!`);
 } else {
   console.log("Good Morning!");
 }
