@@ -29,9 +29,14 @@ const rent = {
 
 // You can change below however you want
 
-const taxAsDecimal = parseFloat(tax[913]) / 100; // get the tax percentage as a decimal and take out . between tax
-const afterTaxAmount = salary * (1 - taxAsDecimal); // calculate salary after tax
-const rentAmount = rent[lodging + "-" + size]; // get the rent amount based on lodging and size
+const taxRateString = tax[913]; // Get the tax rate string
+const taxRateDecimal = parseFloat(taxRateString) / 100; // Convert tax rate to decimal
+
+const afterTaxAmount = salary * (1 - taxRateDecimal); // Calculate after-tax amount
+
+const type = size + "-" + lodging; // Concatenate lodging and size
+
 const balance =
-  afterTaxAmount - expenses.transport - expenses.food - rentAmount; // remove unnecessary brackets
-console.log(balance.toFixed(2)); // Print the balance rounded to two decimal places
+  afterTaxAmount - expenses.transport - expenses.food - rent[type]; // Calculate balance
+
+console.log(balance.toFixed(2)); // Log the balance rounded to two decimal places
