@@ -57,7 +57,7 @@ console.log(
   // updated this to use the short format of a conditional statement
   holidays[futureId]
     ? holidays[futureId].name
-    : `ID ${futureId} not created yet` // had to use string interpolation here.s
+    : `ID ${futureId} not created yet` // had to use string interpolation here
 );
 
 copied = Object.assign({}, holidays[christmas]); // Using Object.assign to do a deep copy
@@ -74,7 +74,7 @@ console.log(
 );
 console.log(
   "Name change:",
-  holidays[christmas].name != copied.name ? copied.name : false // had to use the short format for conditional statements here
+  holidays[christmas].name != copied.name ? copied.name : false // had to use the short format for conditional statements here.
 );
 console.log(
   "Date change:",
