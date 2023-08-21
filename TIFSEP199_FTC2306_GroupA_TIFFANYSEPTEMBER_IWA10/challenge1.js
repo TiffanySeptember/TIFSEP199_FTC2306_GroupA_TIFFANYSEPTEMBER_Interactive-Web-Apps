@@ -122,4 +122,4 @@ console.log(
 ); // had to use string interpolation here
 
 const randomHoliday = holidays[Math.floor(Math.random() * 8)]; // Making sure to return an integer between 1 and 8
-console.log(randomHoliday.date);
+console.log(randomHoliday.date); // console logged the random date
