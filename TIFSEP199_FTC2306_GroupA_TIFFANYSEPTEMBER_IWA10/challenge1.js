@@ -53,57 +53,73 @@ const futureId = 9;
 
 // Do not change code above this comment
 
-console.log(holidays.futureId.name || "ID {futureId} not created yet");
+console.log(
+  // updated this to use the short format of a conditional statement
+  holidays[futureId]
+    ? holidays[futureId].name
+    : `ID ${futureId} not created yet` // had to use string interpolation here
+);
 
-copied = holidays.christmas;
-copied = { name: "X-mas Day" };
-correctDate = copied.date;
-correctDate.hours = 0;
-correctDate.minutes = 0;
-isEarlier = copied.date < holidays[6].date;
+copied = Object.assign({}, holidays[christmas]); // Using Object.assign to do a deep copy
+copied.name = "X-mas Day"; // setting the name individually to avoid overwriting the object
+correctDate = new Date(copied.date); // The date is string format so had to use new Date to set it to date format
+correctDate.setHours(0); // had to use set hours to update the hours
+correctDate.setMinutes(0); // had to use set minutes to update the minutes
+isEarlier = correctDate < holidays[6].date; // here I have to check correctDate against the original date
 console.log("New date is earlier:", isEarlier);
 if (isEarlier) copied.date = correctDate;
-console.log("ID change:", holidays[christmas].id != copied.id || copied.id);
+console.log(
+  "ID change:",
+  holidays[christmas].id != copied.id ? copied.id : false // had to use the short format for conditional statements here
+);
 console.log(
   "Name change:",
-  holidays[christmas].name != copied.name || copied.name
+  holidays[christmas].name != copied.name ? copied.name : false // had to use the short format for conditional statements here
 );
 console.log(
   "Date change:",
-  holidays[christmas].date != copied.date || copied.date
+  holidays[christmas].date != copied.date ? copied.date : false // had to use the short format for conditional statements here
 );
 
 const firstHolidayTimestamp = Math.min(
-  holidays[0].date.getTime,
-  holidays[1].date.getTime,
-  holidays[2].date.getTime,
-  holidays[3].date.getTime,
-  holidays[4].date.getTime,
-  holidays[5].date.getTime,
-  holidays[6].date.getTime,
-  holidays[7].date.getTime,
-  holidays[8].date.getTime
+  new Date(holidays[0].date).getTime(),
+  new Date(holidays[1].date).getTime(),
+  new Date(holidays[2].date).getTime(),
+  new Date(holidays[3].date).getTime(),
+  new Date(holidays[4].date).getTime(),
+  new Date(holidays[5].date).getTime(),
+  new Date(holidays[6].date).getTime(),
+  new Date(holidays[7].date).getTime(),
+  new Date(holidays[8].date).getTime()
 );
 
 const lastHolidayTimestamp = Math.max(
-  holidays[0].date.getTime,
-  holidays[1].date.getTime,
-  holidays[2].date.getTime,
-  holidays[3].date.getTime,
-  holidays[4].date.getTime,
-  holidays[5].date.getTime,
-  holidays[6].date.getTime,
-  holidays[7].date.getTime,
-  holidays[8].date.getTime
+  new Date(holidays[0].date).getTime(),
+  new Date(holidays[1].date).getTime(),
+  new Date(holidays[2].date).getTime(),
+  new Date(holidays[3].date).getTime(),
+  new Date(holidays[4].date).getTime(),
+  new Date(holidays[5].date).getTime(),
+  new Date(holidays[6].date).getTime(),
+  new Date(holidays[7].date).getTime(),
+  new Date(holidays[8].date).getTime()
 );
 
-const firstDay = firstHolidayTimestamp.getDate;
-const firstMonth = firstHolidayTimestamp.getMonth;
-const lastDay = lastHolidayTimestamp.getDate;
-const lastMonth = lastHolidayTimestamp.getMonth;
+const firstDay = new Date(firstHolidayTimestamp).getDate();
+const firstMonth = new Date(firstHolidayTimestamp).getMonth() + 1;
+const lastDay = new Date(lastHolidayTimestamp).getDate();
+const lastMonth = new Date(lastHolidayTimestamp).getMonth() + 1;
 
-console.log("{firstDay}/{firstMonth}/{currentYear}");
-console.log("{lastDay}/{lastMonth}/{currentYear}");
+console.log(
+  `${firstDay.toString().padStart(2, 0)}/${firstMonth // pad the start with 0
+    .toString()
+    .padStart(2, 0)}/${currentYear}` // pad the start with 0
+); // had to use string interpolation here
+console.log(
+  `${lastDay.toString().padStart(2, 0)}/${lastMonth // pad the start with 0
+    .toString()
+    .padStart(2, 0)}/${currentYear}` // pad the start with 0
+); // had to use string interpolation here
 
-const randomHoliday = holidays[Math.random];
+const randomHoliday = holidays[Math.floor(Math.random() * 8)]; // Making sure to return an integer between 1 and 8
 console.log(randomHoliday.date);
