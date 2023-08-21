@@ -10,6 +10,7 @@ const expenses = {
 };
 
 const tax = {
+  // add dubble quotationmarks to everything
   734: "3%",
   234: "20%",
   913: "12%",
@@ -29,14 +30,14 @@ const rent = {
 
 // You can change below however you want
 
-const taxRateString = tax[913]; // Get the tax rate string
-const taxRateDecimal = parseFloat(taxRateString) / 100; // Convert tax rate to decimal
+const taxRateString = tax[913]; // Get the tax rate string by putting the amount in []
+const taxRateDecimal = parseFloat(taxRateString) / 100; // Convert tax rate to decimal,t's divided by 100 to convert it from a percentage to a decimal form.
 
-const afterTaxAmount = salary * (1 - taxRateDecimal); // Calculate after-tax amount
+const afterTaxAmount = salary * (1 - taxRateDecimal); // Calculate after-tax amount. It multiplies the original salary by 1 - taxRateDecimal
 
 const type = size + "-" + lodging; // Concatenate lodging and size
 
 const balance =
-  afterTaxAmount - expenses.transport - expenses.food - rent[type]; // Calculate balance
+  afterTaxAmount - expenses.transport - expenses.food - rent[type]; // Calculate balance,the code calculates the balance by subtracting various expenses from the after-tax amount.
 
 console.log(balance.toFixed(2)); // Log the balance rounded to two decimal places
