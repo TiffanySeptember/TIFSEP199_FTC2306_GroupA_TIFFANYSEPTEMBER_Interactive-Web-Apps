@@ -57,7 +57,7 @@ console.log(
   // updated this to use the short format of a conditional statement
   holidays[futureId]
     ? holidays[futureId].name
-    : `ID ${futureId} not created yet` // had to use string interpolation here.
+    : `ID ${futureId} not created yet` // had to use string interpolation here.s
 );
 
 copied = Object.assign({}, holidays[christmas]); // Using Object.assign to do a deep copy
