@@ -20,7 +20,7 @@ const status3 = order3.querySelector(".status dd");
 biscuits1.textContent = order1.getAttribute("data-biscuits"); // Update the content of each item element with the data attributes
 donuts1.textContent = order1.getAttribute("data-donuts"); //.getAttribute() method to retrieve the values of the data attributes for each item within an order
 pancakes1.textContent = order1.getAttribute("data-pancakes"); //.textContent property to update the content of the respective item elements with these values
-status1.textContent = //status i  usrd a ternary conditional to display 'Delivered' if the attribute value is 'true', otherwise 'Pending'.
+status1.textContent = //status i  used a ternary conditional to display 'Delivered' if the attribute value is 'true', otherwise 'Pending'.
   order1.getAttribute("data-delivered") === "true" ? "Delivered" : "Pending";
 
 biscuits2.textContent = order2.getAttribute("data-biscuits");
