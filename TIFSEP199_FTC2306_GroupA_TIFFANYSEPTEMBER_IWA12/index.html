@@ -4,109 +4,32 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The JS Bakery</title>
+    <title>LMS Pro</title>
     <script src="./scripts.js" defer></script>
   </head>
-
   <body>
-    <h1>The JS Bakery</h1>
+    <div id="book1">
+      <h3>A Good Book</h3>
+      <p>Status: <span class="status" style="color: purple">overdue</span></p>
+      <button class="reserve">Reserve</button>
+      <button class="checkout">Check Out</button>
+      <button class="checkin" style="color: green">Check In</button>
+    </div>
 
-    <h2>Orders</h2>
+    <div id="book2">
+      <h3>The Book of Books</h3>
+      <p>Status: <span class="status" style="color: purple">reserved</span></p>
+      <button class="reserve">Reserve</button>
+      <button class="checkout">Check Out</button>
+      <button class="checkin" style="color: green">Check In</button>
+    </div>
 
-    <section>
-      <h3>Order 1</h3>
-
-      <dl
-        data-key="order1"
-        data-biscuits="10"
-        data-donuts="13"
-        data-pancakes="0"
-        data-delivered="false"
-      >
-        <div class="biscuits">
-          <dt>Biscuits</dt>
-          <dd class="count">Loading...</dd>
-        </div>
-
-        <div class="donuts">
-          <dt>Donuts</dt>
-          <dd class="count">Loading...</dd>
-        </div>
-
-        <div class="pancakes">
-          <dt>Pancakes</dt>
-          <dd class="count">Loading...</dd>
-        </div>
-
-        <div class="status">
-          <dt>Status</dt>
-          <dd>Loading...</dd>
-        </div>
-      </dl>
-    </section>
-
-    <section>
-      <h3>Order 2</h3>
-
-      <dl
-        data-key="order2"
-        data-biscuits="5"
-        data-donuts="0"
-        data-pancakes="2"
-        data-delivered="false"
-      >
-        <div class="biscuits">
-          <dt>Biscuits</dt>
-          <dd class="count">Loading...</dd>
-        </div>
-
-        <div class="donuts">
-          <dt>Donuts</dt>
-          <dd class="count">Loading...</dd>
-        </div>
-
-        <div class="pancakes">
-          <dt>Pancakes</dt>
-          <dd class="count">Loading...</dd>
-        </div>
-
-        <div class="status">
-          <dt>Status</dt>
-          <dd>Loading...</dd>
-        </div>
-      </dl>
-    </section>
-
-    <section>
-      <h3>Order 3</h3>
-
-      <dl
-        data-key="order3"
-        data-biscuits="12"
-        data-donuts="11"
-        data-pancakes="15"
-        data-delivered="true"
-      >
-        <div class="biscuits">
-          <dt>Biscuits</dt>
-          <dd class="count">Loading...</dd>
-        </div>
-
-        <div class="donuts">
-          <dt>Donuts</dt>
-          <dd class="count">Loading...</dd>
-        </div>
-
-        <div class="pancakes">
-          <dt>Pancakes</dt>
-          <dd class="count">Loading...</dd>
-        </div>
-
-        <div class="status">
-          <dt>Status</dt>
-          <dd>Loading...</dd>
-        </div>
-      </dl>
-    </section>
+    <div id="book3">
+      <h3>Another Book</h3>
+      <p>Status: <span class="status" style="color: purple">shelf</span></p>
+      <button class="reserve">Reserve</button>
+      <button class="checkout">Check Out</button>
+      <button class="checkin" style="color: green">Check In</button>
+    </div>
   </body>
 </html>
