@@ -66,9 +66,10 @@ const data = {
 // Only edit below this comment
 
 function createHtml(athleteId) {
-  const athlete = data.response.data[athleteId];
-  const latestRace = athlete.races.slice(-1)[0];
-  const dateArray = new Date(latestRace.date)
+  // takes ID as input
+  const athlete = data.response.data[athleteId]; //get data for athlete
+  const latestRace = athlete.races.slice(-1)[0]; //gets latest race details
+  const dateArray = new Date(latestRace.date) // format date, calculates lap time
     .toLocaleDateString("en-US")
     .split("/");
   const day = dateArray[1];
@@ -82,43 +83,43 @@ function createHtml(athleteId) {
   const hours = Math.floor(totalLapTime / 60);
   const minutes = totalLapTime % 60;
 
-  const fragment = document
-    .createRange()
-    .createContextualFragment(
-      "<h2>" +
-        athlete.id +
-        "</h2>" +
-        "<dl>" +
-        "<dt>Athlete</dt><dd>" +
-        athlete.firstName +
-        " " +
-        athlete.surname +
-        "</dd>" +
-        "<dt>Total Races</dt><dd>" +
-        athlete.races.length +
-        "</dd>" +
-        "<dt>Event Date (Latest)</dt><dd>" +
-        day +
-        " " +
-        month +
-        " " +
-        year +
-        "</dd>" +
-        "<dt>Total Time (Latest)</dt><dd>" +
-        String(hours).padStart(2, "0") +
-        ":" +
-        String(minutes).padStart(2, "0") +
-        "</dd>" +
-        "</dl>"
-    );
+  const fragment = document.createRange().createContextualFragment(
+    // create html snippet with athlete info
+    "<h2>" +
+      athlete.id +
+      "</h2>" +
+      "<dl>" +
+      "<dt>Athlete</dt><dd>" +
+      athlete.firstName +
+      " " +
+      athlete.surname +
+      "</dd>" +
+      "<dt>Total Races</dt><dd>" +
+      athlete.races.length +
+      "</dd>" +
+      "<dt>Event Date (Latest)</dt><dd>" +
+      day +
+      " " +
+      month +
+      " " +
+      year +
+      "</dd>" +
+      "<dt>Total Time (Latest)</dt><dd>" +
+      String(hours).padStart(2, "0") +
+      ":" +
+      String(minutes).padStart(2, "0") +
+      "</dd>" +
+      "</dl>"
+  );
 
-  return fragment;
+  return fragment; //returns html snippet
 }
 
 function appendAthleteData(athleteId) {
+  // takes the ID as input
   const section = document.querySelector('[data-athlete="' + athleteId + '"]');
-  section.appendChild(createHtml(athleteId));
+  section.appendChild(createHtml(athleteId)); //appends the html snippet
 }
 
-appendAthleteData("NM372");
+appendAthleteData("NM372"); //finds the corresponding html sections and add the athlete info tho them
 appendAthleteData("SV782");
